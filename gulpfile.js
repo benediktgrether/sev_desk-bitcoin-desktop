@@ -28,7 +28,7 @@ const onError = function(err) {
 };
 
 function css() {
-  return src("src/sass/main.sass")
+  return src("src/assets/src/sass/main.sass")
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sass())
     .pipe(
@@ -46,7 +46,7 @@ function css() {
 }
 
 function watchFiles() {
-  watch("src/sass/**/*.sass", css);
+  watch("src/assets/src/sass/**/*.sass", css);
   watch("src/**/*.js", css);
 }
 

@@ -1,0 +1,25 @@
+.menu
+  list-style: none
+  margin-left: -15px
+  margin-right: -15px
+
+.menu-item
+  // margin: 15px 0
+  padding: 8px 20px
+
+  &:hover
+    color: darken($primary-white,  50%)
+    background-color: lighten($primary-body,  10%)
+    border-right: 2px solid $primary-blue
+
+    a
+      color: darken($primary-white,  50%)
+
+  &-active
+    background-color: $primary-body
+    border-right: 2px solid $primary-white
+
+a.menu-link
+  color: $primary-white
+  text-decoration: none  
+
