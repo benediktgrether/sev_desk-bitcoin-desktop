@@ -2,38 +2,59 @@ import React, { Component } from "react";
 import Card from "./../Card/Card";
 
 // API https://blockchain.info/ticker
+const test = "string"
 
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      error: null,
+      isLoaded: false,
+      items: {}
     };
   }
 
-  async componentDidMount() {
-    const url = "https://blockchain.info/ticker";
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({
-      items: data
-    });
+
+
+  componentDidMount() {
+    fetch("https://blockchain.info/ticker")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
   }
 
   render() {
-    const { items } = this.state;
-    console.log(items.USD);
-    return (
-      <>
-        <div>Dashboard</div>
-        <Card />
-        <div>items.last</div>
-        <ul>
-          {items.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </>
-    );
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div className="container">
+          <div className="row">
+            {
+              Object.entries(items).map(([key, item], i) => (
+                <div key={i} className="col-sm-12">
+                  < Card getKey={key} getItem={item} />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      );
+    }
   }
 }

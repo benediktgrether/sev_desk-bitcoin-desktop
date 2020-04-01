@@ -18,7 +18,7 @@ const autoprefixBrowsers = [
   "IE 11"
 ];
 
-const onError = function(err) {
+const onError = function (err) {
   notify.onError({
     title: "Error",
     message: err.message,
@@ -39,7 +39,7 @@ function css() {
     .pipe(minifyCSS())
     .pipe(
       purgecss({
-        content: ["src/**/*.js", "public/index.html"]
+        content: ["src/**/*.js", "./public/index.html"]
       })
     )
     .pipe(dest("src/css"));
