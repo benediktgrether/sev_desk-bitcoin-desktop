@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Card from "./../Card/Card";
+import Card from "../Card/CardDashboard";
 
 // API https://blockchain.info/ticker
-const test = "string"
 
 export default class Dashboard extends Component {
   constructor(props) {

@@ -39,7 +39,7 @@ function css() {
     .pipe(minifyCSS())
     .pipe(
       purgecss({
-        content: ["src/**/*.js", "./public/index.html"]
+        content: ["src/**/**/*.js", "./public/index.html"]
       })
     )
     .pipe(dest("src/css"));

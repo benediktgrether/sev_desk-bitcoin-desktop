@@ -1,13 +1,28 @@
 .card
   border-radius: 4px 
   border-top-style: solid
-  border-top-color: lighten($primary-body,  10%)
+  border-top-color: $primary-blue
   border-top-width: 10px
   // border: 1px solid black
-  margin-bottom: 15px
-  padding: 8px 5px
+  margin-bottom: 25px
+  padding: 20px
   background-color: $primary-card-background
 
-.card-item-info
-  display: flex
-  justify-content: space-around
+.card-item:not(:last-child)
+  border-right: 2px solid lighten($primary-card-background, 10%)
+
+.item-title
+  font-size: 2.5rem
+
+.item-trade
+  color: $primary-lighten-blue
+  font-weight: $light
+  
+
+.trade-value
+  font-size: 1.75rem
+
+.card-bitcoindetails
+  margin-bottom: 10px
+  padding-bottom: 10px
+  border-bottom: 2px solid lighten($primary-card-background, 10%)
