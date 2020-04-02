@@ -9,6 +9,10 @@ const items = [
   {
     path: "/bitcoin-details",
     text: "Bitcoin Details"
+  },
+  {
+    path: "/bitcoin-change",
+    text: "Bitcoin Umrechner"
   }
 ];
 

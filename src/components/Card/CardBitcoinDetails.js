@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class CardBitcoinDetails extends Component {
   render() {
     const { getKey } = this.props
-    if (getKey.id != 6) {
+    if (getKey.id !== 6) {
       return (
         <div className="row">
           <div className="col-sm-6 card-bitcoindetails">
@@ -15,7 +15,7 @@ export default class CardBitcoinDetails extends Component {
         </div>
       )
     } else {
-      return (<></>)
+      return null
     }
   }
 }
