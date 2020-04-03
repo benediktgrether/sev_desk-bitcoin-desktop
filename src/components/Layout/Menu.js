@@ -13,6 +13,10 @@ const items = [
   {
     path: "/bitcoin-change",
     text: "Bitcoin Umrechner"
+  },
+  {
+    path: "/bitcoin-chart",
+    text: "Bitcoin Diagramm"
   }
 ];
 

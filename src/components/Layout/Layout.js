@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import BitcoinDetails from "./../Details/BitcoinDetails";
 import Dashboard from "./../Dashboard/Dashboard";
 import BitcoinChange from "./../Change/BitcoinChange"
+import LineGraph from "./../Charts/LineGraph";
 import Menu from "./Menu";
 
 export default function Layout() {
@@ -17,6 +18,7 @@ export default function Layout() {
         <main className='col-sm-9'>
           <div className='content'>
             <Switch>
+              <Route path='/bitcoin-chart' component={LineGraph} />
               <Route path='/bitcoin-change' component={BitcoinChange} />
               <Route path='/bitcoin-details' component={BitcoinDetails} />
               <Route path='/' component={Dashboard} />
